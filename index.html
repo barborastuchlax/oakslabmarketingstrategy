@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OAK'S LAB Marketing Strategy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #1B1B1D;
+    background: #FAFAFA;
+    line-height: 1.55;
+    font-size: 14px;
+  }
+
+  .page {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 48px 40px 64px;
+  }
+
+  /* Header */
+  .header {
+    border-bottom: 3px solid #1B1B1D;
+    padding-bottom: 20px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .header h1 {
+    font-family: Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+  }
+  .header .meta {
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+  }
+
+  /* Goal block under header */
+  .goal-line {
+    margin-bottom: 32px;
+    max-width: 920px;
+    border-left: 4px solid #4A7C59;
+    padding-left: 20px;
+  }
+  .goal-headline {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    line-height: 1.35;
+    color: #1B1B1D;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+    margin-bottom: 16px;
+  }
+  .goal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+  .goal-pill .goal-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #4A7C59;
+    margin-bottom: 4px;
+  }
+  .goal-pill .goal-text {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.55;
+  }
+  .goal-pill .goal-text strong { color: #1B1B1D; font-weight: 600; }
+
+  /* Cycling colors for convictions */
+  .conviction:nth-child(1) { border-top-color: #4A7C59; }
+  .conviction:nth-child(2) { border-top-color: #6B7C5C; }
+  .conviction:nth-child(3) { border-top-color: #A8654A; }
+  .conviction:nth-child(4) { border-top-color: #3A6B7C; }
+
+  /* Cycling colors for pillars */
+  .engine-pillar:nth-child(1) { border-top-color: #4A7C59; }
+  .engine-pillar:nth-child(2) { border-top-color: #6B7C5C; }
+  .engine-pillar:nth-child(3) { border-top-color: #A8654A; }
+  .engine-pillar:nth-child(4) { border-top-color: #3A6B7C; }
+  .engine-pillar:nth-child(5) { border-top-color: #6B4A6B; }
+
+  /* Pillar topic example label */
+  .engine-pillar .pillar-topics-label {
+    font-size: 9.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #C0B7AE;
+    font-weight: 700;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  /* Sections */
+  .section { margin-bottom: 32px; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #747570;
+    margin-bottom: 10px;
+  }
+
+  /* Where-we-play strip (used for "Who we serve") */
+  .where {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    padding: 14px 20px;
+    border-radius: 2px;
+    display: grid;
+    grid-template-columns: 160px 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+    font-size: 13px;
+  }
+  .where .field-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #747570;
+    font-weight: 700;
+  }
+  .where .field-val { color: #1B1B1D; line-height: 1.5; }
+
+  /* Cycling colors for foundation stones */
+  .foundation .stone:nth-child(1) { border-top: 3px solid #4A7C59; }
+  .foundation .stone:nth-child(2) { border-top: 3px solid #6B7C5C; }
+  .foundation .stone:nth-child(3) { border-top: 3px solid #A8654A; }
+  .foundation .stone:nth-child(4) { border-top: 3px solid #3A6B7C; }
+  .foundation .stone:nth-child(5) { border-top: 3px solid #6B4A6B; }
+
+  /* Cycling colors for engine workstream cards */
+  .engine-stream { border-top: 3px solid #C0B7AE; }
+  .engine-stream:nth-child(1) { border-top-color: #4A7C59; }
+  .engine-stream:nth-child(2) { border-top-color: #6B7C5C; }
+  .engine-stream:nth-child(3) { border-top-color: #A8654A; }
+  .engine-stream:nth-child(4) { border-top-color: #3A6B7C; }
+  .engine-stream:nth-child(5) { border-top-color: #6B4A6B; }
+
+  /* Act headers: per-act color accents */
+  .act-header.act-1 {
+    border-left: 6px solid #4A7C59;
+    background: linear-gradient(to right, #1F2D22 0%, #1B1B1D 50%);
+  }
+  .act-header.act-1 .act-num { color: #6FA17B; }
+  .act-header.act-2 {
+    border-left: 6px solid #A8654A;
+    background: linear-gradient(to right, #2D1F19 0%, #1B1B1D 50%);
+  }
+  .act-header.act-2 .act-num { color: #C68869; }
+  .act-header.act-3 {
+    border-left: 6px solid #3A6B7C;
+    background: linear-gradient(to right, #1A252D 0%, #1B1B1D 50%);
+  }
+  .act-header.act-3 .act-num { color: #5E8FA1; }
+
+  /* Act header: major section break */
+  .act-header {
+    margin: 48px 0 24px;
+    padding: 20px 26px;
+    background: #1B1B1D;
+    color: #FAFAFA;
+    border-radius: 2px;
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .act-header.first { margin-top: 8px; }
+  .act-header .act-num {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #C0B7AE;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .act-header .act-divider {
+    color: #C0B7AE;
+    font-weight: 300;
+    font-size: 22px;
+  }
+  .act-header .act-title {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #FAFAFA;
+  }
+  .act-header .act-subtitle {
+    font-size: 12.5px;
+    color: #C0B7AE;
+    font-style: italic;
+    letter-spacing: 0.2px;
+    margin-left: auto;
+    text-align: right;
+  }
+
+  /* Funnel flow indicator */
+  .funnel-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    border-radius: 2px;
+    padding: 12px 24px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    gap: 12px;
+  }
+  .funnel-flow .stage {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    flex: 1;
+    text-align: center;
+  }
+  .funnel-flow .stage.creation { color: #4A7C59; }
+  .funnel-flow .stage.capture { color: #6B7C5C; }
+  .funnel-flow .stage.conversion { color: #A8654A; }
+  .funnel-flow .stage.output { color: #3A6B7C; }
+  .funnel-flow .stage-num {
+    display: inline-block;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: #C0B7AE;
+    margin-right: 6px;
+    font-weight: 400;
+  }
+  .funnel-flow .arrow {
+    color: #C0B7AE;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Channels */
+  .channels {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 12px;
+  }
+  .channel-col {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    border-top: 4px solid #1B1B1D;
+    padding: 18px 18px 16px;
+    border-radius: 2px;
+  }
+  .channel-col.creation { border-top-color: #4A7C59; background: #F5F8F5; }
+  .channel-col.capture { border-top-color: #6B7C5C; background: #F7F8F2; }
+  .channel-col.conversion { border-top-color: #A8654A; background: #FAF2EE; }
+
+  .channel-col h3 {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+  }
+  .channel-col .what {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 14px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .channel-col ul { list-style: none; padding: 0; }
+  .channel-col ul li {
+    padding: 6px 0;
+    border-top: 1px solid #F0EDE6;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .channel-col ul li:first-child { border-top: none; }
+  .channel-col ul li .name { color: #1B1B1D; }
+  .channel-col ul li .sub {
+    display: block;
+    font-size: 11px;
+    color: #999;
+    margin-top: 1px;
+  }
+  .status {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .status.live { background: #4A7C59; color: #FAFAFA; }
+  .status.ship { background: #6B7C5C; color: #FAFAFA; }
+  .status.queue { background: #C0B7AE; color: #1B1B1D; }
+  .status.review { background: #A8654A; color: #FAFAFA; }
+  .status.defer { background: #E5E2DC; color: #747570; }
+
+  /* Content & assets row (paired with channels) */
+  .assets-row {
+    margin-top: 18px;
+  }
+  .assets-sublabel {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #747570;
+    margin-bottom: 10px;
+  }
+  .assets-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+  .asset-col {
+    background: #FAFAFA;
+    border: 1px solid #E5E2DC;
+    border-left: 3px solid #1B1B1D;
+    padding: 14px 16px;
+    border-radius: 2px;
+  }
+  .asset-col.creation { border-left-color: #4A7C59; background: #F5F8F5; }
+  .asset-col.capture { border-left-color: #6B7C5C; background: #F7F8F2; }
+  .asset-col.conversion { border-left-color: #A8654A; background: #FAF2EE; }
+  .asset-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #747570;
+    margin-bottom: 4px;
+  }
+  .asset-col .what {
+    font-size: 11.5px;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .asset-col ul {
+    list-style: none;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .asset-col ul li {
+    color: #1B1B1D;
+    padding: 1px 0;
+  }
+  .asset-col ul li::before {
+    content: "→ ";
+    color: #C0B7AE;
+  }
+  .asset-col ul li .asset-sub {
+    color: #999;
+    font-size: 11px;
+    margin-left: 2px;
+  }
+
+  /* Lead management */
+  .lead-mgmt {
+    background: #F5F1EB;
+    border: 1px solid #E5E2DC;
+    padding: 16px 22px;
+    border-radius: 2px;
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .lead-mgmt h3 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .lead-mgmt .pieces {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    font-size: 12px;
+  }
+  .lead-mgmt .pieces .piece strong {
+    display: block;
+    color: #1B1B1D;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .lead-mgmt .pieces .piece span { color: #666; line-height: 1.45; }
+
+  /* Content engine compressed */
+  .engine-compact {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    border-top: 3px solid #1B1B1D;
+    padding: 18px 20px;
+    border-radius: 2px;
+  }
+  .engine-compact .engine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .engine-compact h3 {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+  .engine-compact .engine-status {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #747570;
+    font-weight: 700;
+  }
+  .engine-streams {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .engine-stream {
+    border: 1px solid #E5E2DC;
+    background: #FAFAFA;
+    padding: 10px 12px;
+    border-radius: 2px;
+  }
+  .engine-stream .stream-label {
+    font-size: 9.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #C0B7AE;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .engine-stream .stream-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .engine-stream .stream-detail {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.45;
+  }
+  .engine-pillars {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 0;
+  }
+  .engine-pillar {
+    border: 1px solid #E5E2DC;
+    border-top: 3px solid #1B1B1D;
+    padding: 12px 12px 10px;
+    background: #FAFAFA;
+    border-radius: 2px;
+  }
+  .engine-pillar h5 {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    line-height: 1.25;
+    color: #1B1B1D;
+  }
+  .engine-pillar .pillar-desc {
+    font-size: 10.5px;
+    color: #747570;
+    font-style: italic;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .engine-pillar ul.pillar-topics {
+    list-style: none;
+    font-size: 11px;
+    color: #1B1B1D;
+    line-height: 1.45;
+    padding: 0;
+  }
+  .engine-pillar ul.pillar-topics li {
+    padding: 2px 0;
+  }
+  .engine-pillar ul.pillar-topics li::before {
+    content: "→ ";
+    color: #C0B7AE;
+  }
+  .engine-footer {
+    padding-top: 10px;
+    border-top: 1px solid #E5E2DC;
+    font-size: 11px;
+    color: #747570;
+  }
+  .engine-footer code {
+    background: #F0EDE6;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 10.5px;
+  }
+
+  /* Convictions */
+  .convictions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .conviction {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    border-top: 3px solid #1B1B1D;
+    padding: 14px 14px 12px;
+    border-radius: 2px;
+  }
+  .conviction .conviction-num {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #C0B7AE;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .conviction h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    line-height: 1.3;
+  }
+  .conviction p {
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  /* Foundation */
+  .foundation {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .foundation .stone {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    padding: 12px 14px;
+    border-radius: 2px;
+  }
+  .foundation .stone h4 {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .foundation .stone ul {
+    list-style: none;
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.55;
+  }
+  .foundation .stone ul li::before { content: "→ "; color: #C0B7AE; }
+
+  /* Winning */
+  .winning {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    border-left: 4px solid #3A6B7C;
+    padding: 20px 24px;
+    border-radius: 2px;
+  }
+  .winning .label {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #747570;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .winning .statement {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+    margin-bottom: 14px;
+    color: #1B1B1D;
+  }
+  .winning-quals {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .winning-qual {
+    border-top: 2px solid #C0B7AE;
+    padding-top: 8px;
+  }
+  .winning-qual strong {
+    display: block;
+    font-size: 12px;
+    color: #1B1B1D;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .winning-qual span {
+    font-size: 11.5px;
+    color: #555;
+    line-height: 1.5;
+  }
+  .winning-bar {
+    background: #FAFAFA;
+    padding: 10px 14px;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #555;
+    border: 1px solid #E5E2DC;
+  }
+  .winning-bar strong { color: #1B1B1D; font-weight: 600; }
+  .winning-bar em { font-style: normal; color: #1B1B1D; font-weight: 700; }
+
+  /* Priorities */
+  .priorities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .priority {
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
+    padding: 12px 14px;
+    border-radius: 2px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .priority .badge {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FAFAFA;
+    background: #1B1B1D;
+    width: 28px;
+    height: 28px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .priority .body { font-size: 12px; }
+  .priority .body strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .priority .body .tag {
+    display: inline-block;
+    font-size: 9.5px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    background: #F0EDE6;
+    color: #747570;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-right: 6px;
+    font-weight: 600;
+  }
+  .priority .body span { color: #555; }
+
+  /* Out of scope */
+  .out-of-scope {
+    background: #F5F1EB;
+    border-left: 4px solid #C0B7AE;
+    padding: 14px 20px;
+    border-radius: 2px;
+  }
+  .out-of-scope ul { list-style: none; font-size: 12.5px; color: #555; line-height: 1.7; }
+  .out-of-scope ul li::before {
+    content: "× ";
+    color: #C0B7AE;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .out-of-scope ul li strong { color: #1B1B1D; font-weight: 600; }
+
+  /* Footer */
+  .footer {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #E5E2DC;
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+  }
+  .footer code {
+    background: #E5E2DC;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>OAK'S LAB Marketing Strategy</h1>
+  </div>
+
+  <!-- ACT 1: The basics -->
+  <div class="act-header act-1 first">
+    <span class="act-num">01</span>
+    <span class="act-divider">·</span>
+    <span class="act-title">The basics</span>
+    <span class="act-subtitle">What we're building, who we serve, what we believe</span>
+  </div>
+
+  <!-- Goal block -->
+  <div class="goal-line">
+    <div class="goal-headline">Build sustainable inbound from CTOs and CPOs at high-growth fintech, cybersecurity, healthtech, and B2B SaaS companies, by being findable when they search, recognizable when they research, and trusted when they shortlist.</div>
+    <div class="goal-body">
+      <div class="goal-pill">
+        <div class="goal-label">Why now</div>
+        <div class="goal-text">OAK'S LAB grows through outbound and referrals. Both work, both have ceilings. Marketing's job is to build the <strong>second growth lever</strong>: inbound that compounds, doesn't leak when budget stops.</div>
+      </div>
+      <div class="goal-pill">
+        <div class="goal-label">What we're aiming for</div>
+        <div class="goal-text">A measurable inbound engine producing <strong>7+ qualified leads / month from ICP</strong>, sustained. Quality clears the bar BD can close. The engine gets stronger month over month.</div>
+      </div>
+      <div class="goal-pill">
+        <div class="goal-label">How we get there</div>
+        <div class="goal-text">The <strong>engine below</strong>: Create / Capture / Convert. Each channel and asset serves one of three jobs: get attention, get found, persuade.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Who we serve -->
+  <div class="section">
+    <div class="section-label">Who we serve</div>
+    <div class="where">
+      <div class="field-label">ICP &amp; markets</div>
+      <div>
+        <div class="field-label" style="font-size:10px; margin-bottom:2px;">ICP</div>
+        <div class="field-val">CTOs &amp; CPOs at high-growth tech companies · Series A–D · 51–500 HC · primarily US</div>
+      </div>
+      <div>
+        <div class="field-label" style="font-size:10px; margin-bottom:2px;">Markets</div>
+        <div class="field-val">Fintech · Cybersecurity · Healthtech · B2B SaaS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What we believe -->
+  <div class="section">
+    <div class="section-label">What we believe</div>
+    <div class="convictions">
+      <div class="conviction">
+        <div class="conviction-num">01</div>
+        <h4>Industry expertise beats general capability</h4>
+        <p>Fintech CTOs and CPOs hire fintech-fluent partners. We win by being deep, not broad.</p>
+      </div>
+      <div class="conviction">
+        <div class="conviction-num">02</div>
+        <h4>Long-term partnership beats project work</h4>
+        <p>Our 4-year retention is the economic engine. We attract buyers who think in years.</p>
+      </div>
+      <div class="conviction">
+        <div class="conviction-num">03</div>
+        <h4>Content compounds, paid leaks</h4>
+        <p>Paid stops earning when it stops. Content built in 2026 still earns in 2028.</p>
+      </div>
+      <div class="conviction">
+        <div class="conviction-num">04</div>
+        <h4>CTOs and CPOs are research-led, peer-validated</h4>
+        <p>They respond to authority signals (case studies, named clients, technical depth) at the moments they're looking.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACT 2: The engine -->
+  <div class="act-header act-2">
+    <span class="act-num">02</span>
+    <span class="act-divider">·</span>
+    <span class="act-title">The engine</span>
+    <span class="act-subtitle">How we generate, capture, and convert demand</span>
+  </div>
+
+  <!-- How we'll get there: channels -->
+  <div class="section">
+    <div class="section-label">How we'll get there: create demand, capture intent, convert known accounts</div>
+
+    <div class="funnel-flow">
+      <span class="stage creation"><span class="stage-num">01</span>Create demand</span>
+      <span class="arrow">▶</span>
+      <span class="stage capture"><span class="stage-num">02</span>Capture intent</span>
+      <span class="arrow">▶</span>
+      <span class="stage conversion"><span class="stage-num">03</span>Convert warm</span>
+      <span class="arrow">▶</span>
+      <span class="stage output">Pipeline</span>
+    </div>
+
+    <div class="channels">
+
+      <div class="channel-col creation">
+        <h3>Create</h3>
+        <div class="what">Build awareness with CTOs and CPOs who don't know us. Compounding, slower payback.</div>
+        <ul>
+          <li><span class="name">LinkedIn Organic</span><span class="status live">Live</span></li>
+          <li><span class="name">LinkedIn Awareness Ads</span><span class="status live">Live</span></li>
+          <li><span class="name">Email / newsletter</span><span class="status live">Live</span></li>
+          <li><span class="name">LinkedIn Thought Leader Ads</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">Events</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">PR / earned media coverage</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">Webinars</span><span class="status defer">Idea</span></li>
+        </ul>
+      </div>
+
+      <div class="channel-col capture">
+        <h3>Capture</h3>
+        <div class="what">Catch people already searching for what we do. Direct payback, finite pool.</div>
+        <ul>
+          <li><span class="name">Google Search Ads</span><span class="status live">Live</span></li>
+          <li><span class="name">Clutch directory</span><span class="status live">Live</span></li>
+          <li><span class="name">LinkedIn Consideration Ads</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">Directories (GoodFirms etc.)</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">SEO Industry pages</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">SEO Services pages</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">Guest posts in publications</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">Backlinks outreach for SEO</span><span class="status queue">Upcoming</span></li>
+        </ul>
+      </div>
+
+      <div class="channel-col conversion">
+        <h3>Convert</h3>
+        <div class="what">Move warm accounts to booked calls. Compresses sales cycle.</div>
+        <ul>
+          <li><span class="name">LinkedIn outbound warm-up</span><span class="status live">Live</span></li>
+          <li><span class="name">LinkedIn Retargeting Ads</span><span class="status queue">Upcoming</span></li>
+          <li><span class="name">Email nurture sequences</span><span class="status defer">Idea</span></li>
+          <li><span class="name">Google display retargeting</span><span class="status defer">Idea</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Content & Assets row, paired with channels above -->
+    <div class="assets-row">
+      <div class="assets-sublabel">What we put in front of them: our content &amp; assets</div>
+      <div class="assets-cols">
+        <div class="asset-col creation">
+          <h4>For Create</h4>
+          <div class="what">Built to get attention. Short-form, ungated, broadcast on LinkedIn + email. Job: surface us in feeds before people are looking.</div>
+          <ul>
+            <li>LinkedIn TL posts <span class="asset-sub">~150 by Dec</span></li>
+            <li>Carousels &amp; infographics <span class="asset-sub">built from anchors / case studies</span></li>
+            <li>Newsletter <span class="asset-sub">quarterly</span></li>
+            <li>Video case studies (named clients) <span class="asset-sub">idea</span></li>
+            <li>Founder explainer series <span class="asset-sub">idea</span></li>
+            <li>"Behind the build" mini-docs <span class="asset-sub">idea</span></li>
+          </ul>
+        </div>
+        <div class="asset-col capture">
+          <h4>For Capture</h4>
+          <div class="what">Built to be found. Public, indexed, SEO-built. Job: rank when someone is actively searching for what we do.</div>
+          <ul>
+            <li>Industry pages <span class="asset-sub">4 verticals · shipping</span></li>
+            <li>Services page <span class="asset-sub">shipping</span></li>
+            <li>Knowledge Hub articles <span class="asset-sub">15 live · 80–100 by Dec</span></li>
+          </ul>
+        </div>
+        <div class="asset-col conversion">
+          <h4>For Convert</h4>
+          <div class="what">Built to make the case. Designed proof, often gated. Job: persuade someone weighing a decision that we're the right partner.</div>
+          <ul>
+            <li>Anchor reports <span class="asset-sub">3 by Dec · gated</span></li>
+            <li>Case studies <span class="asset-sub">4 in pipeline</span></li>
+            <li>Sales one-pagers <span class="asset-sub">5 live</span></li>
+            <li>Scaling guide <span class="asset-sub">gated download · v4</span></li>
+            <li>Choosing a Dev Partner: CTO's Buyer's Guide <span class="asset-sub">gated download · idea</span></li>
+            <li>12-to-40 Engineering Scaling Playbook <span class="asset-sub">gated download · idea</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lead management -->
+    <div class="lead-mgmt">
+      <h3>Lead management<br><span style="font-size:11px; font-weight:400; color:#747570; text-transform:uppercase; letter-spacing:1px;">What happens after a lead</span></h3>
+      <div class="pieces">
+        <div class="piece"><strong>Attribution chain</strong><span>UTMs → sessionStorage → meeting link → HubSpot owner auto-assigned</span></div>
+        <div class="piece"><strong>Lead scoring</strong><span>Company Tier × Deal Tier</span></div>
+        <div class="piece"><strong>Auto-routing</strong><span>Inbound leads → Josh via Zapier</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Content engine - compressed -->
+  <div class="section">
+    <div class="section-label">The content engine: what powers Create as paid drops in June</div>
+    <div class="engine-compact">
+      <div class="engine-header">
+        <h3>Five content types · five pillars</h3>
+        <span class="engine-status">Documented · in execution</span>
+      </div>
+      <div class="engine-streams">
+        <div class="engine-stream">
+          <div class="stream-title">Anchor reports &amp; whitepapers</div>
+          <div class="stream-detail">Long-form, gated, designed. <strong>Anchors by Dec:</strong> Fintech (Sept) · AI (Nov) · Healthtech (Dec). <strong>Live:</strong> SaaS scaling guide (v4). <strong>Ideating:</strong> CTO's buyer's guide · 12-to-40 scaling playbook.</div>
+        </div>
+        <div class="engine-stream">
+          <div class="stream-title">Articles &amp; blog posts</div>
+          <div class="stream-detail">Long-form, ungated, SEO-compounding. ~10 new + 120 KH backlog uploads by Dec.</div>
+        </div>
+        <div class="engine-stream">
+          <div class="stream-title">Case studies</div>
+          <div class="stream-detail">Designed long-form client proof. 4 in pipeline: OpenLoop · Blackpoint · NPM · Swiftly.</div>
+        </div>
+        <div class="engine-stream">
+          <div class="stream-title">Carousels &amp; infographics</div>
+          <div class="stream-detail">Designed short-form visuals. Built from anchor highlights, case-study mini-stories, pillar excerpts.</div>
+        </div>
+        <div class="engine-stream">
+          <div class="stream-title">Short-form posts</div>
+          <div class="stream-detail">Text-led, primarily for LinkedIn. ~150 by Dec across 5 voices.</div>
+        </div>
+      </div>
+      <div class="pillars-note">Five themes every piece (LinkedIn post, KH article, anchor report section) maps to.</div>
+      <div class="engine-pillars">
+        <div class="engine-pillar">
+          <h5>Product Engineering at Scale</h5>
+          <div class="pillar-desc">Scaling eng teams without losing velocity</div>
+          <div class="pillar-topics-label">Example angles</div>
+          <ul class="pillar-topics">
+            <li>The 12-to-40 problem: why eng scaling breaks here</li>
+            <li>Your roadmap is ready. Your team isn't.</li>
+            <li>When "more headcount" is the wrong answer</li>
+          </ul>
+        </div>
+        <div class="engine-pillar">
+          <h5>Production AI Execution</h5>
+          <div class="pillar-desc">Shipping AI in production, not just demos</div>
+          <div class="pillar-topics-label">Example angles</div>
+          <ul class="pillar-topics">
+            <li>RAG patterns that survive real users</li>
+            <li>Building evals that actually catch failure</li>
+            <li>When you need an ML team, and when you don't</li>
+          </ul>
+        </div>
+        <div class="engine-pillar">
+          <h5>Engineering Org Design</h5>
+          <div class="pillar-desc">Designing teams that actually ship</div>
+          <div class="pillar-topics-label">Example angles</div>
+          <ul class="pillar-topics">
+            <li>Team topologies for growth-stage product eng</li>
+            <li>Decision rights without bottlenecks</li>
+            <li>Founder-to-CTO leadership transitions</li>
+          </ul>
+        </div>
+        <div class="engine-pillar">
+          <h5>Compliance-grade Product Dev</h5>
+          <div class="pillar-desc">Building for regulated industries</div>
+          <div class="pillar-topics-label">Example angles</div>
+          <ul class="pillar-topics">
+            <li>What FINRA, SEC, HIPAA actually scrutinize</li>
+            <li>Compliance-by-design: shipping faster, not slower</li>
+            <li>What ISO certification gets you (and doesn't)</li>
+          </ul>
+        </div>
+        <div class="engine-pillar">
+          <h5>Partnership vs Vendor</h5>
+          <div class="pillar-desc">Why long partnerships outperform projects</div>
+          <div class="pillar-topics-label">Example angles</div>
+          <ul class="pillar-topics">
+            <li>Telling a partner from a vendor in the first call</li>
+            <li>Embed vs. autonomous team: when each fits</li>
+            <li>Choosing a dev partner: questions CTOs and CPOs forget</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACT 3: How we'll know and what we won't do -->
+  <div class="act-header act-3">
+    <span class="act-num">03</span>
+    <span class="act-divider">·</span>
+    <span class="act-title">How we'll know and what we won't do</span>
+    <span class="act-subtitle">Measurement and constraints</span>
+  </div>
+
+  <!-- How we'll know it's working -->
+  <div class="section">
+    <div class="winning">
+      <div class="label">How we'll know it's working</div>
+      <div class="statement">A sustainable inbound engine where pipeline quality clears the bar BD can actually close, and the engine compounds month over month, instead of leaking when paid budget stops.</div>
+      <div class="winning-quals">
+        <div class="winning-qual">
+          <strong>Inbound becomes primary</strong>
+          <span>New conversations come increasingly from inbound. Less dependency on outbound bandwidth or referral velocity.</span>
+        </div>
+        <div class="winning-qual">
+          <strong>Pipeline quality clears the bar</strong>
+          <span>The leads that hit BD are real prospects: ICP-fit, intent-signaling, closeable. Not vanity volume.</span>
+        </div>
+        <div class="winning-qual">
+          <strong>Engine compounds</strong>
+          <span>Content built this quarter still earns next quarter. Authority signals stack. The system gets stronger without proportional new spend.</span>
+        </div>
+      </div>
+      <div class="winning-bar">
+        <strong>Operating target:</strong> <em>7 highly-qualified leads / month from ICP</em>, sustained. Supporting metrics (volume, CPL, conversion rate, retention) serve this bar, not the other way around.
+      </div>
+    </div>
+  </div>
+
+  <!-- What we're deliberately not doing -->
+  <div class="section">
+    <div class="section-label">What we're deliberately NOT doing</div>
+    <div class="out-of-scope">
+      <ul>
+        <li><strong>New verticals beyond fintech / cybersec / healthtech / SaaS.</strong> Industry expertise is our claim. Diluting it dilutes the strategy.</li>
+        <li><strong>PR push.</strong> Deferred to Q3, once Wave 2 has 30+ days of data.</li>
+        <li><strong>Events beyond FinTechers Autumn.</strong> Lower MQL ROI than concentrated paid + content right now.</li>
+        <li><strong>Net-new pages outside homepage / services / industry / KH.</strong> Finish the priority set first.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
