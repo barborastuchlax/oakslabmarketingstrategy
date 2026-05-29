@@ -13,8 +13,10 @@
     color: #1B1B1D;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.65;
   }
+
+  /* Top nav */
   .top-nav {
     background: #1B1B1D;
     color: #FAF7F2;
@@ -23,6 +25,9 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #2A2A2D;
+    position: sticky;
+    top: 0;
+    z-index: 50;
   }
   .top-nav .brand {
     font-weight: 700;
@@ -36,93 +41,73 @@
     font-size: 13px;
   }
   .top-nav a:hover { color: #FAF7F2; }
+
+  /* Container */
   .container {
-    max-width: 900px;
+    max-width: 920px;
     margin: 0 auto;
-    padding: 50px 40px 100px;
+    padding: 60px 40px 120px;
   }
+
+  /* Title block */
   h1 {
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 6px 0;
+    line-height: 1.15;
+    margin: 0 0 8px 0;
     color: #1B1B1D;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.015em;
   }
   h1 + p em {
     color: #747570;
     font-style: italic;
     font-size: 13px;
   }
+
+  /* Section headers (h2) — strong, with hairline above */
   h2 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
-    margin: 50px 0 14px 0;
+    margin: 60px 0 18px 0;
     color: #1B1B1D;
-    border-bottom: 2px solid #1B1B1D;
-    padding-bottom: 8px;
+    padding-top: 30px;
+    border-top: 2px solid #1B1B1D;
+    letter-spacing: -0.005em;
   }
+
+  /* Sub-section headers (h3) — Month dividers, etc */
   h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    margin: 32px 0 10px 0;
+    margin: 38px 0 12px 0;
     color: #1B1B1D;
+    letter-spacing: -0.005em;
   }
+
+  /* Article / piece titles (h4) */
   h4 {
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 700;
-    margin: 22px 0 8px 0;
+    margin: 28px 0 8px 0;
     color: #1B1B1D;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: 12px;
+    line-height: 1.35;
+    padding-left: 14px;
+    border-left: 3px solid #C9C2B8;
   }
-  p { margin: 0 0 14px 0; }
+
+  /* Body */
+  p { margin: 0 0 12px 0; }
   strong { color: #1B1B1D; }
   em { font-style: italic; }
-  a { color: #3A6B7C; }
+  a { color: #3A6B7C; text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { color: #1B4A5C; }
   hr {
     border: 0;
     border-top: 1px solid #DDD7CD;
-    margin: 40px 0;
+    margin: 50px 0;
   }
-  ul, ol { padding-left: 22px; margin: 0 0 14px 0; }
+  ul, ol { padding-left: 22px; margin: 0 0 16px 0; }
   li { margin-bottom: 6px; }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 16px 0 24px;
-    font-size: 13px;
-    line-height: 1.55;
-    background: #FFF;
-    border-radius: 4px;
-    overflow: hidden;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  }
-  th {
-    background: #1B1B1D;
-    color: #FAF7F2;
-    text-align: left;
-    padding: 10px 14px;
-    font-weight: 600;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-  td {
-    padding: 10px 14px;
-    border-bottom: 1px solid #EFEAE2;
-    vertical-align: top;
-  }
-  tr:last-child td { border-bottom: none; }
-  tr:hover td { background: #FBF8F3; }
-  code {
-    background: #EFEAE2;
-    padding: 1px 6px;
-    border-radius: 3px;
-    font-family: "SF Mono", Menlo, Consolas, monospace;
-    font-size: 13px;
-  }
   blockquote {
     border-left: 3px solid #A8654A;
     margin: 16px 0;
@@ -130,11 +115,100 @@
     color: #555;
     font-style: italic;
   }
-  .meta {
-    color: #747570;
+  code {
+    background: #EFEAE2;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
     font-size: 13px;
-    font-style: italic;
-    margin-bottom: 30px;
+  }
+
+  /* Pillar badge */
+  .pillar-line {
+    margin: 0 0 12px 0 !important;
+    padding-left: 17px;
+  }
+  .pillar {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid transparent;
+  }
+  .pillar.p-product { background: #E8F0F5; color: #2A5A75; border-color: #C8DCE8; }
+  .pillar.p-domain { background: #FAEFDB; color: #8B5A1F; border-color: #ECD5A3; }
+  .pillar.p-talent { background: #DDEFDF; color: #2D5E36; border-color: #B8DAB8; }
+  .pillar.p-partner { background: #EBE3F0; color: #5C3D75; border-color: #D6C7E0; }
+  .pillar.p-ai { background: #E2EFEF; color: #2C5C5C; border-color: #B8D4D4; }
+  .pillar.p-default { background: #EFEAE2; color: #555; }
+
+  /* Inline labels (Audience / What it is / Role / etc.) */
+  .art-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #747570;
+    margin-right: 4px;
+  }
+
+  /* Article paragraphs */
+  h4 ~ p {
+    padding-left: 17px;
+    color: #2A2A2D;
+  }
+  h4 + p.pillar-line + p {
+    margin-top: 4px;
+  }
+
+  /* Tables */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 18px 0 28px;
+    font-size: 13px;
+    line-height: 1.5;
+    background: #FFF;
+    border: 1px solid #E8E4DC;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  th {
+    background: #1B1B1D;
+    color: #FAF7F2;
+    text-align: left;
+    padding: 11px 14px;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  td {
+    padding: 11px 14px;
+    border-top: 1px solid #EFEAE2;
+    vertical-align: top;
+  }
+  tr:first-child td { border-top: none; }
+  tr:hover td { background: #FBF8F3; }
+  td strong { font-weight: 700; }
+
+  /* Tighter list inside tables */
+  td ul { margin: 0; padding-left: 18px; }
+
+  /* Lists inside table cells should be tight */
+  table p { margin: 0; }
+
+  /* Print friendliness */
+  @media print {
+    .top-nav { display: none; }
+    .container { padding: 20px; }
+    h2 { page-break-before: auto; }
+    h4 { page-break-inside: avoid; }
   }
 </style>
 </head>
@@ -146,6 +220,104 @@
 <div class="container">
 <h1>Organic Content Plan, H2 2026</h1>
 <p><em>Owner: Barbora Stuchlá. Status: Draft for review with Jake. Date: May 28, 2026.</em></p>
+<hr />
+<h2>At a glance</h2>
+<p>The content engine for H2 2026, sequenced around three industry reports.</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>What's in it</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Industry reports</td>
+<td>Flagship gated PDFs that anchor the year (R1 Aug, R2 Oct, R3 Dec)</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Gated downloadables</td>
+<td>Convert-stage assets targeting specific buyer personas</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Thought-leadership articles</td>
+<td>Fresh long-form, ungated, one per pillar moment</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Knowledge Hub backlog</td>
+<td>Existing articles, batched for upload + SEO</td>
+<td>120</td>
+</tr>
+<tr>
+<td>Case studies</td>
+<td>Long-form designed client proof</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Web content</td>
+<td>Industry (5) + Situations (5) + Services (3) pages</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Newsletters</td>
+<td>Quarterly emails to ~1,950 subscribers</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Email nurture flows</td>
+<td>HubSpot workflows on downloadable submit</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Short-form LinkedIn posts</td>
+<td>Five voices, individual cadences</td>
+<td>~150</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key launches by month</strong></p>
+<table>
+<thead>
+<tr>
+<th>Month</th>
+<th>Headline drop</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>June</td>
+<td>T1 + T2 (partnership tone-setters), SaaS Scaling Guide v4 ships</td>
+</tr>
+<tr>
+<td>July</td>
+<td>T3 methodology, T4 RAG patterns, R1 in production</td>
+</tr>
+<tr>
+<td>August</td>
+<td><strong>R1 AI in Production launches</strong>, T5 + T6, Email Flow A goes live</td>
+</tr>
+<tr>
+<td>September</td>
+<td>T7 eval loops, T8 hire vs partner, R2 in production</td>
+</tr>
+<tr>
+<td>October</td>
+<td><strong>R2 Healthcare launches</strong>, T9 + T10, KH library hits 120/120</td>
+</tr>
+<tr>
+<td>November</td>
+<td>T11 product + engineering pairing, R3 in production</td>
+</tr>
+<tr>
+<td>December</td>
+<td><strong>R3 State of Engineering in Finance launches</strong>, T12, year-end newsletter</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2>The five content pillars</h2>
 <p>Every piece of content maps to one of these five pillars. The first four mirror OAK'S LAB's brand pillars. The fifth, AI-Native Delivery, is a content pillar in its own right because AI is too central to OAK'S LAB's positioning right now to sit only as a thread within the others.</p>
@@ -190,31 +362,31 @@
 <p>Three flagship gated PDFs. Each unlocks four to six weeks of distribution derivatives.</p>
 <h3>R1. AI in Production: A 2026 Playbook for Product Teams</h3>
 <p><em>August. Pillar: AI-Native Delivery.</em></p>
-<p><strong>Who it's for.</strong> CTOs and CPOs at high-growth SaaS and regulated-industry companies who have AI on the roadmap but haven't shipped a production-grade AI feature yet. The "everyone has AI on their roadmap, few have shipped it reliably" audience.</p>
-<p><strong>Why it exists.</strong> Sets the year's authority arc on AI before the vertical reports land in Q4. Establishes OAK'S LAB as a credible voice on AI in production. Not the "play with LLMs" crowd, the "ship it with monitoring, evals, and reliability" crowd. Also the lowest-risk first report (framework-heavy, light on named-client dependencies).</p>
-<p><strong>What it is.</strong> A 20-page designed PDF plus a companion AI Delivery Maturity Model framework that distributes independently. Aggregated cross-client patterns rather than original research.</p>
-<p><strong>Cluster pair.</strong> Ships paired with the new AI Native Development services page. The page is the always-public summary, the report is the gated deep dive.</p>
-<p><strong>Build window.</strong> Kickoff mid-June. Draft mid-July. Design and review early August. Launch second week of August.</p>
+<p><span class="art-label">Who it's for</span> CTOs and CPOs at high-growth SaaS and regulated-industry companies who have AI on the roadmap but haven't shipped a production-grade AI feature yet. The "everyone has AI on their roadmap, few have shipped it reliably" audience.</p>
+<p><span class="art-label">Why it exists</span> Sets the year's authority arc on AI before the vertical reports land in Q4. Establishes OAK'S LAB as a credible voice on AI in production. Not the "play with LLMs" crowd, the "ship it with monitoring, evals, and reliability" crowd. Also the lowest-risk first report (framework-heavy, light on named-client dependencies).</p>
+<p><span class="art-label">What it is</span> A 20-page designed PDF plus a companion AI Delivery Maturity Model framework that distributes independently. Aggregated cross-client patterns rather than original research.</p>
+<p><span class="art-label">Cluster pair</span> Ships paired with the new AI Native Development services page. The page is the always-public summary, the report is the gated deep dive.</p>
+<p><span class="art-label">Build window</span> Kickoff mid-June. Draft mid-July. Design and review early August. Launch second week of August.</p>
 <h3>R2. Engineering in Healthcare: A Practitioner's Playbook for 2026</h3>
 <p><em>October. Working title. Pillar: Deep Domain Expertise.</em></p>
-<p><strong>Who it's for.</strong> Engineering leads and senior engineers at high-growth healthcare companies. Not just CTOs. People building telehealth, EHR-integrated, or clinical-workflow products who hit HIPAA, FHIR, and adoption walls. Practitioner-leaning, not boardroom.</p>
-<p><strong>Why it exists.</strong> Healthcare is a priority vertical (Track 1) with a strong client story (OpenLoop) but we're under-published in the space. This report establishes domain authority and gives the Healthcare industry page a gated download to point at. Q4 timing because September is too soon after R1, December is owned by R3.</p>
-<p><strong>What it is.</strong> An 18-page PDF, pattern-library content. Topics include HIPAA-by-architecture, EHR integration patterns, clinical workflow fit, and the adoption-versus-compliance trade-off. Heavy on anonymized examples and external regulatory data.</p>
-<p><strong>Named-client risk.</strong> OpenLoop permission uncertain. Designed around anonymized vignettes ("a high-growth healthcare client we worked with on telehealth scaling..."). Named-client upgrades drop in at design stage if permissions land.</p>
-<p><strong>Build window.</strong> Kickoff mid-August (overlaps R1 launch, the first sequencing risk). Draft September. Design first three weeks of October. Launch third week of October.</p>
+<p><span class="art-label">Who it's for</span> Engineering leads and senior engineers at high-growth healthcare companies. Not just CTOs. People building telehealth, EHR-integrated, or clinical-workflow products who hit HIPAA, FHIR, and adoption walls. Practitioner-leaning, not boardroom.</p>
+<p><span class="art-label">Why it exists</span> Healthcare is a priority vertical (Track 1) with a strong client story (OpenLoop) but we're under-published in the space. This report establishes domain authority and gives the Healthcare industry page a gated download to point at. Q4 timing because September is too soon after R1, December is owned by R3.</p>
+<p><span class="art-label">What it is</span> An 18-page PDF, pattern-library content. Topics include HIPAA-by-architecture, EHR integration patterns, clinical workflow fit, and the adoption-versus-compliance trade-off. Heavy on anonymized examples and external regulatory data.</p>
+<p><span class="art-label">Named-client risk</span> OpenLoop permission uncertain. Designed around anonymized vignettes ("a high-growth healthcare client we worked with on telehealth scaling..."). Named-client upgrades drop in at design stage if permissions land.</p>
+<p><span class="art-label">Build window</span> Kickoff mid-August (overlaps R1 launch, the first sequencing risk). Draft September. Design first three weeks of October. Launch third week of October.</p>
 <h3>R3. State of Engineering in Finance 2026</h3>
 <p><em>December. Pillar: Deep Domain Expertise.</em></p>
-<p><strong>Who it's for.</strong> CTOs at high-growth finance companies. Capital markets, lending, payments, investment banking, private markets. Currently the highest-intent inbound segment.</p>
-<p><strong>Why it exists.</strong> Three reasons.</p>
+<p><span class="art-label">Who it's for</span> CTOs at high-growth finance companies. Capital markets, lending, payments, investment banking, private markets. Currently the highest-intent inbound segment.</p>
+<p><span class="art-label">Why it exists</span> Three reasons.</p>
 <ol>
 <li>Finance is the primary paid angle (Track 1, around 60% of LinkedIn budget). This report proves the claim by showing depth, not asserting it.</li>
 <li>Q1 2027 budget cycles. Finance CTOs plan partner spend in December and January, and a flagship report lands in their decision window.</li>
 <li>Original research is the biggest investment we can make in domain authority, and December gives July through October to run a CTO survey through outbound.</li>
 </ol>
-<p><strong>What it is.</strong> A 22-page designed PDF plus an interactive content hub page with chart-by-chart unpacking. Original CTO survey anchors three of six sections (compliance, AI in finance, talent and build-vs-partner). The other three are framework pieces from delivery experience.</p>
-<p><strong>Original research.</strong> CTO survey, 50+ responses target. Outbound owns outreach (July through October).</p>
-<p><strong>Named-client risk.</strong> NPM permission uncertain. CMG and Future Mortgage TBD. The spine is survey data, not named-client vignettes, so durability is higher than R2 on this dimension.</p>
-<p><strong>Build window.</strong> Kickoff late September. Survey live July through October. Analysis October through early November. Draft mid-November. Design early December. Launch second week of December.</p>
+<p><span class="art-label">What it is</span> A 22-page designed PDF plus an interactive content hub page with chart-by-chart unpacking. Original CTO survey anchors three of six sections (compliance, AI in finance, talent and build-vs-partner). The other three are framework pieces from delivery experience.</p>
+<p><span class="art-label">Original research</span> CTO survey, 50+ responses target. Outbound owns outreach (July through October).</p>
+<p><span class="art-label">Named-client risk</span> NPM permission uncertain. CMG and Future Mortgage TBD. The spine is survey data, not named-client vignettes, so durability is higher than R2 on this dimension.</p>
+<p><span class="art-label">Build window</span> Kickoff late September. Survey live July through October. Analysis October through early November. Draft mid-November. Design early December. Launch second week of December.</p>
 <hr />
 <h2>Gated downloadables (4)</h2>
 <p>In addition to the industry reports. Four downloadables for the Convert stage, each targeting a specific buyer persona. Heavy repurpose from existing content. The lift is more synthesis and design than original writing.</p>
@@ -223,23 +395,23 @@
 <p>CTOs at growth-stage SaaS scaling 20 to 200 engineers. Final approval done. With design now, then ships.</p>
 <h3>D2. Choosing a Dev Partner: A CTO's Buyer's Guide</h3>
 <p><em>Q3 to Q4 (idea). Pillar: Long-Term Partnership.</em></p>
-<p><strong>Who it's for.</strong> CTOs in active evaluation of a development partner. Bottom-of-funnel.</p>
-<p><strong>Why it exists.</strong> Direct sales aid. Gives prospects a structured framework instead of a sales pitch. The "when not to hire us" section earns trust and weeds out poor-fit leads early.</p>
-<p><strong>What it is.</strong> A 15 to 25 page gated PDF. Sections: decision framework for evaluating partners, structured comparison rubric, "when not to hire OAK" honesty section, engagement model overview (Embed vs Autonomous), red flags to look for in a dev partner pitch.</p>
-<p><strong>Source material.</strong> Around 60% repurpose from sales one-pagers, voice profiles, and partnership content. Around 40% net new (decision framework, comparison rubric, "when not to hire us" section).</p>
+<p><span class="art-label">Who it's for</span> CTOs in active evaluation of a development partner. Bottom-of-funnel.</p>
+<p><span class="art-label">Why it exists</span> Direct sales aid. Gives prospects a structured framework instead of a sales pitch. The "when not to hire us" section earns trust and weeds out poor-fit leads early.</p>
+<p><span class="art-label">What it is</span> A 15 to 25 page gated PDF. Sections: decision framework for evaluating partners, structured comparison rubric, "when not to hire OAK" honesty section, engagement model overview (Embed vs Autonomous), red flags to look for in a dev partner pitch.</p>
+<p><span class="art-label">Source material</span> Around 60% repurpose from sales one-pagers, voice profiles, and partnership content. Around 40% net new (decision framework, comparison rubric, "when not to hire us" section).</p>
 <h3>D3. The Roadmap Reality Check: A CPO's Field Guide to What to Build, What to Defer, and What to Kill</h3>
 <p><em>Q3 to Q4 (idea). Pillar: Product Thinking.</em></p>
-<p><strong>Who it's for.</strong> CPOs at high-growth companies running overloaded roadmaps. The "more product initiatives than your team can handle" audience. Targets product leaders, not engineering.</p>
-<p><strong>Why it exists.</strong> Everything else in the content engine is oriented toward CTOs. CPOs are equally critical buyers per the ICP but currently have nothing built for them. This downloadable closes that gap.</p>
-<p><strong>What it is.</strong> An 18 to 25 page gated PDF. Sections: the roadmap audit (identifying the 30% you should cut today), discovery (how much is enough), prioritization frameworks that survive contact with the executive team, when AI features earn the slot, how to say no (to the board, to sales, to engineering), the "what we'd defer if forced" exercise.</p>
-<p><strong>Source material.</strong> Around 50% repurpose from the OAK'S LAB Way Discovery methodology, the Dual-Track Agile pieces in the Knowledge Hub, and existing voice profile content. Around 50% net new (CPO-facing frameworks, anti-patterns, decision exercises).</p>
+<p><span class="art-label">Who it's for</span> CPOs at high-growth companies running overloaded roadmaps. The "more product initiatives than your team can handle" audience. Targets product leaders, not engineering.</p>
+<p><span class="art-label">Why it exists</span> Everything else in the content engine is oriented toward CTOs. CPOs are equally critical buyers per the ICP but currently have nothing built for them. This downloadable closes that gap.</p>
+<p><span class="art-label">What it is</span> An 18 to 25 page gated PDF. Sections: the roadmap audit (identifying the 30% you should cut today), discovery (how much is enough), prioritization frameworks that survive contact with the executive team, when AI features earn the slot, how to say no (to the board, to sales, to engineering), the "what we'd defer if forced" exercise.</p>
+<p><span class="art-label">Source material</span> Around 50% repurpose from the OAK'S LAB Way Discovery methodology, the Dual-Track Agile pieces in the Knowledge Hub, and existing voice profile content. Around 50% net new (CPO-facing frameworks, anti-patterns, decision exercises).</p>
 <h3>D4. 20-to-200 Engineering Scaling Playbook</h3>
 <p><em>Q4 (idea). Pillar: Elite Engineering Talent.</em></p>
-<p><strong>Who it's for.</strong> CTOs at companies scaling engineering from around 20 to around 200. Post-Series B, pre-IPO, growing fast and feeling the cracks in the org. The exact pressure point OAK'S LAB is best at.</p>
-<p><strong>Why it exists.</strong> More granular sales tool than the SaaS Scaling Guide. Lets outbound point at a specific, named problem. Generates Convert-stage MQLs because the audience self-selects on a known pain point.</p>
-<p><strong>What it is.</strong> A 20 to 25 page gated PDF. Pedagogical playbook with frameworks, anti-patterns, anonymized client patterns. Sections: org-shape inflection points, when to hire vs partner, what breaks first as you scale, how to maintain product velocity through team growth.</p>
-<p><strong>Source material.</strong> Around 50% repurpose from SaaS Scaling Guide structure and anonymized client patterns. Around 50% net new (pedagogical framing, anti-patterns, frameworks).</p>
-<p><strong>Decision point.</strong> Confirm by end of August which of D2, D3, D4 land in Q4 vs slip to Q1 2027.</p>
+<p><span class="art-label">Who it's for</span> CTOs at companies scaling engineering from around 20 to around 200. Post-Series B, pre-IPO, growing fast and feeling the cracks in the org. The exact pressure point OAK'S LAB is best at.</p>
+<p><span class="art-label">Why it exists</span> More granular sales tool than the SaaS Scaling Guide. Lets outbound point at a specific, named problem. Generates Convert-stage MQLs because the audience self-selects on a known pain point.</p>
+<p><span class="art-label">What it is</span> A 20 to 25 page gated PDF. Pedagogical playbook with frameworks, anti-patterns, anonymized client patterns. Sections: org-shape inflection points, when to hire vs partner, what breaks first as you scale, how to maintain product velocity through team growth.</p>
+<p><span class="art-label">Source material</span> Around 50% repurpose from SaaS Scaling Guide structure and anonymized client patterns. Around 50% net new (pedagogical framing, anti-patterns, frameworks).</p>
+<p><span class="art-label">Decision point</span> Confirm by end of August which of D2, D3, D4 land in Q4 vs slip to Q1 2027.</p>
 <hr />
 <h2>Thought-leadership articles (12)</h2>
 <p>Twelve fresh long-form pieces June through December, each around 1,500 words with a hero graphic, ungated on the content hub. Every piece serves a specific LinkedIn moment.</p>
@@ -282,71 +454,71 @@
 </table>
 <h3>June</h3>
 <h4>T1. The Four-Year Partnership Pattern</h4>
-<p><em>Pillar: Long-Term Partnership.</em></p>
-<p><strong>Audience.</strong> CTOs and founders at high-growth companies evaluating dev partners.</p>
-<p><strong>What it is.</strong> What 4-year client retention actually looks like inside OAK'S LAB. The structural reasons: no fixed-fee project pressure, dedicated team continuity, embed model. Counter-story to the "agency churn" pattern most CTOs have seen. References Blackpoint (3 funding rounds), CMG (7+ years), OpenLoop. Frames partnership as a discipline, not a tagline.</p>
-<p><strong>Role.</strong> Sets tone for the year. Opens the partnership argument that T8 and T11 close.</p>
+<p class="pillar-line"><span class="pillar p-partner">Long-Term Partnership</span></p>
+<p><span class="art-label">Audience</span> CTOs and founders at high-growth companies evaluating dev partners.</p>
+<p><span class="art-label">What it is</span> What 4-year client retention actually looks like inside OAK'S LAB. The structural reasons: no fixed-fee project pressure, dedicated team continuity, embed model. Counter-story to the "agency churn" pattern most CTOs have seen. References Blackpoint (3 funding rounds), CMG (7+ years), OpenLoop. Frames partnership as a discipline, not a tagline.</p>
+<p><span class="art-label">Role</span> Sets tone for the year. Opens the partnership argument that T8 and T11 close.</p>
 <h4>T2. Why "More Engineers" Is Almost Never the Answer</h4>
-<p><em>Pillar: Product Thinking.</em></p>
-<p><strong>Audience.</strong> CTOs and CPOs under pressure to hire fast as delivery slows.</p>
-<p><strong>What it is.</strong> Argues the default response to slowing delivery (hire more engineers) almost always misses the real bottleneck (product decisions, prioritization, architecture). What CTOs should check first. The economics of hire vs build vs partner. Reframes the question as a product question, not a capacity question.</p>
-<p><strong>Role.</strong> Establishes Product Thinking as a pillar.</p>
+<p class="pillar-line"><span class="pillar p-product">Product Thinking</span></p>
+<p><span class="art-label">Audience</span> CTOs and CPOs under pressure to hire fast as delivery slows.</p>
+<p><span class="art-label">What it is</span> Argues the default response to slowing delivery (hire more engineers) almost always misses the real bottleneck (product decisions, prioritization, architecture). What CTOs should check first. The economics of hire vs build vs partner. Reframes the question as a product question, not a capacity question.</p>
+<p><span class="art-label">Role</span> Establishes Product Thinking as a pillar.</p>
 <h3>July</h3>
 <h4>T3. Inside the OAK'S LAB Way: How Senior Engineers Ramp in Week One</h4>
-<p><em>Pillar: Elite Engineering Talent.</em></p>
-<p><strong>Audience.</strong> CTOs evaluating partners, frustrated by ramp-up timelines from previous engagements.</p>
-<p><strong>What it is.</strong> Methodology piece. What "no ramp-up theater" actually means in practice. The week-one playbook: how OAK engineers absorb a codebase, identify risks, and contribute by Friday. The role of pairing, code review, and the "shadow first, ship second" pattern. Builds credibility for the elite-talent claim by showing how it works.</p>
-<p><strong>Role.</strong> First Elite Engineering Talent article. Closes the methodology gap.</p>
+<p class="pillar-line"><span class="pillar p-talent">Elite Engineering Talent</span></p>
+<p><span class="art-label">Audience</span> CTOs evaluating partners, frustrated by ramp-up timelines from previous engagements.</p>
+<p><span class="art-label">What it is</span> Methodology piece. What "no ramp-up theater" actually means in practice. The week-one playbook: how OAK engineers absorb a codebase, identify risks, and contribute by Friday. The role of pairing, code review, and the "shadow first, ship second" pattern. Builds credibility for the elite-talent claim by showing how it works.</p>
+<p><span class="art-label">Role</span> First Elite Engineering Talent article. Closes the methodology gap.</p>
 <h4>T4. Production AI Patterns: RAG (Series 1 of 2)</h4>
-<p><em>Pillar: AI-Native Delivery.</em></p>
-<p><strong>Audience.</strong> Senior engineers and engineering leads at companies building AI features and hitting production walls.</p>
-<p><strong>What it is.</strong> First in the two-part Production AI Patterns series. What we've learned from shipping RAG to production: where they break, what scales, the architectural decisions that matter. Concrete patterns with code-level honesty.</p>
-<p><strong>Role.</strong> Pre-warms the August R1 audience by establishing AI authority in advance.</p>
+<p class="pillar-line"><span class="pillar p-ai">AI-Native Delivery</span></p>
+<p><span class="art-label">Audience</span> Senior engineers and engineering leads at companies building AI features and hitting production walls.</p>
+<p><span class="art-label">What it is</span> First in the two-part Production AI Patterns series. What we've learned from shipping RAG to production: where they break, what scales, the architectural decisions that matter. Concrete patterns with code-level honesty.</p>
+<p><span class="art-label">Role</span> Pre-warms the August R1 audience by establishing AI authority in advance.</p>
 <h3>August</h3>
 <h4>T5. Why Founders Get the AI Question Wrong</h4>
-<p><em>Pillar: AI-Native Delivery.</em></p>
-<p><strong>Audience.</strong> Founders and CTOs treating AI as a feature to add rather than an architecture decision to make.</p>
-<p><strong>What it is.</strong> Companion to R1. The common founder mistake: treating AI as a layered-on capability instead of an architecture. What "AI-native" actually means and why it changes the build vs buy calculus. Punchier and more opinionated than the report.</p>
-<p><strong>Role.</strong> R1 launch companion. Designed to drive report downloads.</p>
+<p class="pillar-line"><span class="pillar p-ai">AI-Native Delivery</span></p>
+<p><span class="art-label">Audience</span> Founders and CTOs treating AI as a feature to add rather than an architecture decision to make.</p>
+<p><span class="art-label">What it is</span> Companion to R1. The common founder mistake: treating AI as a layered-on capability instead of an architecture. What "AI-native" actually means and why it changes the build vs buy calculus. Punchier and more opinionated than the report.</p>
+<p><span class="art-label">Role</span> R1 launch companion. Designed to drive report downloads.</p>
 <h4>T6. The Product Roadmap Test: 5 Questions Every CPO Should Ask Before Approving the Next Sprint</h4>
-<p><em>Pillar: Product Thinking.</em></p>
-<p><strong>Audience.</strong> CPOs at high-growth companies running overloaded roadmaps. Also product managers and engineering leads who run roadmap reviews.</p>
-<p><strong>What it is.</strong> A discovery-and-prioritization framework. Five questions to ask the roadmap before approving the next sprint. The "what we'd cut if we had to" exercise. Why CPO-led discipline beats CTO-led complaints about scope creep.</p>
-<p><strong>Role.</strong> First CPO-targeted article. Pairs with D3 downloadable.</p>
+<p class="pillar-line"><span class="pillar p-product">Product Thinking</span></p>
+<p><span class="art-label">Audience</span> CPOs at high-growth companies running overloaded roadmaps. Also product managers and engineering leads who run roadmap reviews.</p>
+<p><span class="art-label">What it is</span> A discovery-and-prioritization framework. Five questions to ask the roadmap before approving the next sprint. The "what we'd cut if we had to" exercise. Why CPO-led discipline beats CTO-led complaints about scope creep.</p>
+<p><span class="art-label">Role</span> First CPO-targeted article. Pairs with D3 downloadable.</p>
 <h3>September</h3>
 <h4>T7. Production AI Patterns: Eval Loops (Series 2 of 2)</h4>
-<p><em>Pillar: AI-Native Delivery.</em></p>
-<p><strong>Audience.</strong> Engineering leads who shipped AI features and are now staring at quality drift, regressions, and "demo works but production doesn't."</p>
-<p><strong>What it is.</strong> Series 2 of the Production AI Patterns series. How to evaluate AI outputs in production. Patterns for eval datasets, golden-set testing, regression detection, human-in-the-loop sampling. Practitioner-honest about the limits of each.</p>
-<p><strong>Role.</strong> Sustains AI authority post-R1 launch.</p>
+<p class="pillar-line"><span class="pillar p-ai">AI-Native Delivery</span></p>
+<p><span class="art-label">Audience</span> Engineering leads who shipped AI features and are now staring at quality drift, regressions, and "demo works but production doesn't."</p>
+<p><span class="art-label">What it is</span> Series 2 of the Production AI Patterns series. How to evaluate AI outputs in production. Patterns for eval datasets, golden-set testing, regression detection, human-in-the-loop sampling. Practitioner-honest about the limits of each.</p>
+<p><span class="art-label">Role</span> Sustains AI authority post-R1 launch.</p>
 <h4>T8. The Real Cost of a 12-Month Engineering Push: Hire vs Partner</h4>
-<p><em>Pillar: Long-Term Partnership.</em></p>
-<p><strong>Audience.</strong> CTOs and CFOs running build-vs-partner economics for a 12-month engineering scale-up.</p>
-<p><strong>What it is.</strong> Full TCO comparison of hiring in-house vs partnering for a 12-month push. Includes the hidden costs of hiring: recruiting time, ramp time, attrition risk, severance exposure if priorities shift. Argues the partnership model wins on velocity AND cost for 12-to-18-month windows.</p>
-<p><strong>Role.</strong> High-credibility executive voice on the build-vs-partner question.</p>
+<p class="pillar-line"><span class="pillar p-partner">Long-Term Partnership</span></p>
+<p><span class="art-label">Audience</span> CTOs and CFOs running build-vs-partner economics for a 12-month engineering scale-up.</p>
+<p><span class="art-label">What it is</span> Full TCO comparison of hiring in-house vs partnering for a 12-month push. Includes the hidden costs of hiring: recruiting time, ramp time, attrition risk, severance exposure if priorities shift. Argues the partnership model wins on velocity AND cost for 12-to-18-month windows.</p>
+<p><span class="art-label">Role</span> High-credibility executive voice on the build-vs-partner question.</p>
 <h3>October</h3>
 <h4>T9. AI Code Review: What's Actually Working in Production</h4>
-<p><em>Pillar: Elite Engineering Talent.</em></p>
-<p><strong>Audience.</strong> Engineering leads thinking about how to operationalize AI in their own SDLC, not just their products.</p>
-<p><strong>What it is.</strong> Practitioner piece on AI-assisted code review in OAK'S LAB's own delivery process. What's working, what's not, where AI catches bugs humans miss, and where AI generates false confidence. Doubles as proof for the "3× development speed" claim that runs through OAK'S LAB marketing.</p>
-<p><strong>Role.</strong> Second Elite Engineering Talent piece. Cross-threads into AI-Native Delivery.</p>
+<p class="pillar-line"><span class="pillar p-talent">Elite Engineering Talent</span></p>
+<p><span class="art-label">Audience</span> Engineering leads thinking about how to operationalize AI in their own SDLC, not just their products.</p>
+<p><span class="art-label">What it is</span> Practitioner piece on AI-assisted code review in OAK'S LAB's own delivery process. What's working, what's not, where AI catches bugs humans miss, and where AI generates false confidence. Doubles as proof for the "3× development speed" claim that runs through OAK'S LAB marketing.</p>
+<p><span class="art-label">Role</span> Second Elite Engineering Talent piece. Cross-threads into AI-Native Delivery.</p>
 <h4>T10. Compliance-by-Design: Avoiding the Late-Stage Rewrite</h4>
-<p><em>Pillar: Deep Domain Expertise (healthcare).</em></p>
-<p><strong>Audience.</strong> Engineering leads at healthcare companies. Founders evaluating whether their compliance approach will survive scaling.</p>
-<p><strong>What it is.</strong> R2 companion. The pattern that kills healthcare product launches: building first, layering compliance on at the end. The real cost of late-stage HIPAA rewrites. How OAK'S LAB designs HIPAA into the architecture from commit one.</p>
-<p><strong>Role.</strong> R2 launch companion. Drives Healthcare report downloads.</p>
+<p class="pillar-line"><span class="pillar p-domain">Deep Domain Expertise (healthcare)</span></p>
+<p><span class="art-label">Audience</span> Engineering leads at healthcare companies. Founders evaluating whether their compliance approach will survive scaling.</p>
+<p><span class="art-label">What it is</span> R2 companion. The pattern that kills healthcare product launches: building first, layering compliance on at the end. The real cost of late-stage HIPAA rewrites. How OAK'S LAB designs HIPAA into the architecture from commit one.</p>
+<p><span class="art-label">Role</span> R2 launch companion. Drives Healthcare report downloads.</p>
 <h3>November</h3>
 <h4>T11. Why We Pair Product and Engineering, Not Product Then Engineering</h4>
-<p><em>Pillar: Long-Term Partnership.</em></p>
-<p><strong>Audience.</strong> CTOs and CPOs running product orgs where product hands off to engineering in a waterfall pattern.</p>
-<p><strong>What it is.</strong> The OAK'S LAB methodology of running product and engineering in parallel, not sequentially. Why "Product hands off to Engineering" is the source of half the rework in your sprint. Concrete examples of the parallel-pairing model in client work.</p>
-<p><strong>Role.</strong> Cross-threads to Product Thinking and Elite Engineering Talent.</p>
+<p class="pillar-line"><span class="pillar p-partner">Long-Term Partnership</span></p>
+<p><span class="art-label">Audience</span> CTOs and CPOs running product orgs where product hands off to engineering in a waterfall pattern.</p>
+<p><span class="art-label">What it is</span> The OAK'S LAB methodology of running product and engineering in parallel, not sequentially. Why "Product hands off to Engineering" is the source of half the rework in your sprint. Concrete examples of the parallel-pairing model in client work.</p>
+<p><span class="art-label">Role</span> Cross-threads to Product Thinking and Elite Engineering Talent.</p>
 <h3>December</h3>
 <h4>T12. Why Founders Get the Compliance Conversation Wrong</h4>
-<p><em>Pillar: Deep Domain Expertise (finance).</em></p>
-<p><strong>Audience.</strong> Founders and CTOs at high-growth finance companies treating compliance as a checklist to satisfy.</p>
-<p><strong>What it is.</strong> R3 companion. The founder mistake: thinking compliance is something you satisfy after building, not an architectural constraint to design around. Why finance products that win at scale treat compliance like type safety: built in, automatic, invisible.</p>
-<p><strong>Role.</strong> R3 launch companion. Drives Finance report downloads.</p>
+<p class="pillar-line"><span class="pillar p-domain">Deep Domain Expertise (finance)</span></p>
+<p><span class="art-label">Audience</span> Founders and CTOs at high-growth finance companies treating compliance as a checklist to satisfy.</p>
+<p><span class="art-label">What it is</span> R3 companion. The founder mistake: thinking compliance is something you satisfy after building, not an architectural constraint to design around. Why finance products that win at scale treat compliance like type safety: built in, automatic, invisible.</p>
+<p><span class="art-label">Role</span> R3 launch companion. Drives Finance report downloads.</p>
 <h3>Backup ideas (bench, not committed)</h3>
 <p>If a slot opens or a planned piece slips:</p>
 <ul>
@@ -559,11 +731,11 @@
 <hr />
 <h2>Email nurture flows (2)</h2>
 <p>Until now the content engine has treated downloadable submits as fuel for HubSpot lists and ad retargeting. The email inboxes themselves haven't been worked. Email nurture closes that gap. Two flows because website downloads and LinkedIn Lead Gen submits come from very different intent levels.</p>
-<p><strong>Operating model.</strong> Both flows are short, link-heavy emails (three to five sentences plus a link), not long-form newsletters. The job is to pull the lead back to oakslab.com, where the existing content engine (industry pages, services pages, Situations pages, case studies, articles, KH library, and one-pagers) does the conversion work. Each email points at one specific asset. Built and run as HubSpot workflows.</p>
+<p><span class="art-label">Operating model</span> Both flows are short, link-heavy emails (three to five sentences plus a link), not long-form newsletters. The job is to pull the lead back to oakslab.com, where the existing content engine (industry pages, services pages, Situations pages, case studies, articles, KH library, and one-pagers) does the conversion work. Each email points at one specific asset. Built and run as HubSpot workflows.</p>
 <h3>Flow A: Website downloads (warm, came on purpose)</h3>
-<p><strong>Trigger.</strong> Form submit on any gated downloadable from oakslab.com (D1, D2, D3, D4, plus R1, R2, R3 reports as they ship).</p>
-<p><strong>Audience signal.</strong> Came to the site on purpose. Filled in a form deliberately. Likely already evaluating partners or product-development approaches.</p>
-<p><strong>Cadence.</strong> Five emails over around four weeks.</p>
+<p><span class="art-label">Trigger</span> Form submit on any gated downloadable from oakslab.com (D1, D2, D3, D4, plus R1, R2, R3 reports as they ship).</p>
+<p><span class="art-label">Audience signal</span> Came to the site on purpose. Filled in a form deliberately. Likely already evaluating partners or product-development approaches.</p>
+<p><span class="art-label">Cadence</span> Five emails over around four weeks.</p>
 <table>
 <thead>
 <tr>
@@ -607,9 +779,9 @@
 </tbody>
 </table>
 <h3>Flow B: LinkedIn Lead Gen (cold, scrolling)</h3>
-<p><strong>Trigger.</strong> Form submit on a LinkedIn Lead Gen form attached to a downloadable promotion.</p>
-<p><strong>Audience signal.</strong> Was scrolling LinkedIn. Submitted because the gate was low-friction. May not remember opting in. Way colder than Flow A.</p>
-<p><strong>Cadence.</strong> Four emails over around four weeks. Gentler, fewer asks, more "we know you might be cold" framing.</p>
+<p><span class="art-label">Trigger</span> Form submit on a LinkedIn Lead Gen form attached to a downloadable promotion.</p>
+<p><span class="art-label">Audience signal</span> Was scrolling LinkedIn. Submitted because the gate was low-friction. May not remember opting in. Way colder than Flow A.</p>
+<p><span class="art-label">Cadence</span> Four emails over around four weeks. Gentler, fewer asks, more "we know you might be cold" framing.</p>
 <table>
 <thead>
 <tr>
@@ -646,8 +818,8 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Tooling.</strong> HubSpot workflows. All leads land in HubSpot already. This just attaches a sequence to the lifecycle event.</p>
-<p><strong>Sequencing.</strong> Flow A goes live first, paired with the SaaS Scaling Guide v4 launch and the R1 AI report launch (August). Flow B goes live alongside the first LinkedIn Lead Gen ad campaign, likely Q4.</p>
+<p><span class="art-label">Tooling</span> HubSpot workflows. All leads land in HubSpot already. This just attaches a sequence to the lifecycle event.</p>
+<p><span class="art-label">Sequencing</span> Flow A goes live first, paired with the SaaS Scaling Guide v4 launch and the R1 AI report launch (August). Flow B goes live alongside the first LinkedIn Lead Gen ad campaign, likely Q4.</p>
 <h3>Dependency: one-pager refresh</h3>
 <p>Both flows rely on the industry one-pagers in <code>sales-enablement/</code>. Per the industry-rename audit, these still need:</p>
 <ul>
