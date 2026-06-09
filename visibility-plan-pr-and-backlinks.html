@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OAK'S LAB · Visibility Plan H2 2026</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: #FAF7F2; color: #1B1B1D;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 15.5px; line-height: 1.7;
+  }
+  .top-nav {
+    background: #1B1B1D; color: #FAF7F2; padding: 14px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 50;
+  }
+  .top-nav .brand { font-weight: 700; letter-spacing: 0.05em; font-size: 13px; text-transform: uppercase; }
+  .top-nav span.sub { color: #C9C2B8; font-size: 13px; }
+
+  /* Hero */
+  .hero { background: #1B1B1D; color: #FAF7F2; padding: 70px 40px 60px; }
+  .hero-inner { max-width: 980px; margin: 0 auto; }
+  .hero .kicker {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em;
+    color: #C99B7C; margin-bottom: 14px;
+  }
+  .hero h1 { font-size: 44px; font-weight: 700; line-height: 1.12; margin: 0 0 16px; letter-spacing: -0.02em; }
+  .hero .lede { font-size: 18px; color: #C9C2B8; max-width: 640px; margin: 0 0 36px; line-height: 1.6; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .stat {
+    background: #242427; border: 1px solid #333336; border-radius: 8px; padding: 18px 20px;
+  }
+  .stat .num { font-size: 28px; font-weight: 700; line-height: 1.1; color: #FAF7F2; }
+  .stat .lbl { font-size: 12px; color: #9B958B; text-transform: uppercase; letter-spacing: 0.06em; margin-top: 6px; line-height: 1.4; }
+  .hero .meta { font-size: 12.5px; color: #747570; margin-top: 28px; font-style: italic; }
+
+  .container { max-width: 980px; margin: 0 auto; padding: 0 40px 120px; }
+
+  /* Section headers with number chips */
+  .section { margin-top: 76px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; border-top: 2px solid #1B1B1D; padding-top: 26px; margin-bottom: 6px; }
+  .sec-num {
+    font-size: 13px; font-weight: 700; color: #A8654A; letter-spacing: 0.08em;
+  }
+  h2 { font-size: 28px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+  .sec-sub { color: #747570; font-size: 15px; margin: 6px 0 24px; max-width: 700px; }
+  h3 { font-size: 19px; font-weight: 700; margin: 36px 0 12px; }
+  p { margin: 0 0 14px; }
+  ul { padding-left: 22px; margin: 0 0 16px; }
+  li { margin-bottom: 9px; }
+  a { color: #3A6B7C; text-decoration: underline; text-underline-offset: 2px; }
+
+  table {
+    width: 100%; border-collapse: separate; border-spacing: 0; margin: 18px 0 10px;
+    font-size: 13.5px; line-height: 1.55; background: #FFF;
+    border: 1px solid #E8E4DC; border-radius: 8px; overflow: hidden;
+  }
+  th {
+    background: #1B1B1D; color: #FAF7F2; text-align: left; padding: 12px 16px;
+    font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em;
+  }
+  td { padding: 12px 16px; border-top: 1px solid #EFEAE2; vertical-align: top; }
+  tr:first-child td { border-top: none; }
+  tr:hover td { background: #FBF8F3; }
+
+  .badge {
+    display: inline-block; padding: 3px 11px; border-radius: 100px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em;
+    border: 1px solid transparent; white-space: nowrap;
+  }
+  .b-claude  { background: #E2EFEF; color: #2C5C5C; border-color: #B8D4D4; }
+  .b-barbora { background: #FAEFDB; color: #8B5A1F; border-color: #ECD5A3; }
+  .b-both    { background: #EBE3F0; color: #5C3D75; border-color: #D6C7E0; }
+  .b-ready   { background: #DDEFDF; color: #2D5E36; border-color: #B8DAB8; }
+  .b-drafted { background: #E8F0F5; color: #2A5A75; border-color: #C8DCE8; }
+  .b-open    { background: #EFEAE2; color: #6B6B66; border-color: #DDD7CD; }
+
+  .callout {
+    background: #FFF; border: 1px solid #E8E4DC; border-left: 4px solid #A8654A;
+    border-radius: 8px; padding: 20px 24px; margin: 24px 0; font-size: 15px;
+  }
+  .callout.quiet { border-left-color: #C9C2B8; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* Split cards */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
+  .card { background: #FFF; border: 1px solid #E8E4DC; border-radius: 8px; padding: 24px 26px; }
+  .card .card-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+  .card .card-meta { font-size: 12.5px; color: #747570; margin-bottom: 14px; }
+  .card ul { margin-bottom: 0; }
+  .card li { margin-bottom: 8px; font-size: 14px; }
+
+  /* Press-moment feature blocks */
+  .moment { background: #FFF; border: 1px solid #E8E4DC; border-radius: 8px; padding: 24px 28px; margin: 16px 0; }
+  .moment .when {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+    color: #A8654A; margin-bottom: 6px;
+  }
+  .moment .title { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+  .moment p { font-size: 14.5px; margin-bottom: 0; color: #2A2A2D; }
+
+  /* Timeline */
+  .timeline { margin: 26px 0 10px; }
+  .t-row { display: grid; grid-template-columns: 110px 1fr 130px; gap: 18px; padding: 14px 0; border-top: 1px solid #E8E4DC; align-items: start; }
+  .t-row:first-child { border-top: none; }
+  .t-month { font-weight: 700; font-size: 14px; }
+  .t-what { font-size: 14.5px; color: #2A2A2D; }
+  .t-who { text-align: right; }
+  .t-big .t-month, .t-big .t-what { color: #1B1B1D; }
+  .t-big { background: #FFF; border: 1px solid #E8E4DC; border-radius: 8px; padding: 14px 18px; margin: 6px 0; }
+
+  .footer-note { margin-top: 70px; color: #747570; font-style: italic; font-size: 14px; border-top: 1px solid #DDD7CD; padding-top: 24px; }
+
+  @media (max-width: 760px) {
+    .two-col, .stat-row { grid-template-columns: 1fr; }
+    .t-row { grid-template-columns: 90px 1fr; }
+    .t-who { grid-column: 2; text-align: left; }
+    .hero h1 { font-size: 32px; }
+  }
+  @media print {
+    .top-nav { display: none; }
+    .hero { padding: 36px 20px; }
+    .container { padding: 0 20px 40px; }
+    .moment, .card, .stat { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="top-nav">
+  <span class="brand">OAK'S LAB · Marketing Strategy</span>
+  <span class="sub">Visibility Plan · H2 2026</span>
+</div>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Marketing · H2 2026</div>
+    <h1>Visibility Plan:<br>PR, Backlinks &amp; Directories</h1>
+    <p class="lede">The content engine is the investment: three industry reports, original research, a full publishing library. This plan outlines how we could turn each of these into coverage, journalist relationships, and backlinks where relevant.</p>
+    <div class="stat-row">
+      <div class="stat"><div class="num">3</div><div class="lbl">Press moment opportunities, centered around report launches</div></div>
+      <div class="stat"><div class="num">5</div><div class="lbl">Czech press pitches</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Directory listings to claim or refresh</div></div>
+      <div class="stat"><div class="num">~10k</div><div class="lbl">CZK base-case spend for all of H2</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Why this exists</h2></div>
+  <p class="sec-sub">We're producing original content based on research for the remainder of 2026, the kind of content journalists could actually cite. What's missing isn't more content on the roadmap, it's making sure the right people see what we've already planned.</p>
+  <p><strong>What PR actually does for us.</strong> PR technically isn't a direct lead channel. Coverage and earned backlinks do two quieter jobs: they lift search and AI-search visibility for everything on oakslab.com, and they build the public credibility that gets us onto a CTO's shortlist, and into a VC's recommendation.</p>
+  <p><strong>Four choices shape the plan:</strong></p>
+  <ul>
+    <li><strong>We run PR ourselves.</strong> Relationships stay ours and the learning stays in-house. An agency can come in as a one-off for the August report if it clearly adds reach, but it may not be needed: the default is doing it ourselves.</li>
+    <li><strong>One story, told broadly.</strong> The AI-Native angle goes to broad tech outlets where it has real pull. No vertical trade press.</li>
+    <li><strong>Links earned, not bought.</strong> Report citations, podcast appearances, published quotes. No paid schemes, no guest-post farms.</li>
+    <li><strong>Czech press goes first.</strong> The home market responds fastest to our story. The first clips and first relationships come from there, then carry into the international push.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">02</span><h2>How it runs</h2></div>
+  <p class="sec-sub">June lays the groundwork, July executes it in two focused sessions. Everything after that rides on the report launches.</p>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">June: preparation <span class="badge b-barbora" style="margin-left:6px">Barbora</span></div>
+      <div class="card-meta">Groundwork, so July is pure execution</div>
+      <ul>
+        <li>Named journalist identified at each of the five Czech outlets, so pitches go to a person, not an inbox</li>
+        <li>Czech versions of the Forbes, Hospodářské noviny, and E15 pitches</li>
+        <li>Ten-name international journalist list for the August report launch</li>
+        <li>Directory status check + updated Crunchbase profile text, ready to paste</li>
+        <li>Sign up for the four journalist-request platforms (HARO, Qwoted, Connectively, Help a B2B Writer, the services where journalists post "I need an expert quote" requests) so the daily backlink habit can start in June/July, not later</li>
+        <li>Confirm Jake and Theo are available as the interview subjects if an outlet says yes</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">July: execution <span class="badge b-barbora" style="margin-left:6px">Barbora</span></div>
+      <div class="card-meta">Two focused sessions, everything prepared in advance</div>
+      <ul>
+        <li><strong>Session one:</strong> send the five Czech pitches (the journalist-request platforms are already signed up from June, so the daily habit is running by now)</li>
+        <li><strong>Session two:</strong> claim and update the six directory listings using the prepared materials</li>
+        <li><strong>End of July:</strong> agency decision for the August report push. An agency can come in (30–80k CZK one-off), but the default is doing it in-house</li>
+      </ul>
+    </div>
+  </div>
+  <p><strong>What this needs from you, Jake:</strong> an interview if a Czech outlet says yes (realistically one, about an hour, with Theo), your call on the agency question at the end of July, and the occasional podcast when a topic's ready. Everything else is handled.</p>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">03</span><h2>Track one: Czech press</h2></div>
+  <p class="sec-sub">The home market moves first. Czech press could be genuinely receptive to the spin off a "Czechs succeeding abroad" story, which makes it the fastest route to first coverage. All of that carries into and supports the international push in August.</p>
+
+  <p><strong>The angle, locked: the founder story.</strong> One of the few Czech engineering firms built deliberately for the US market: 80% of clients are American, founded in 2016 by Czech-American brothers. Distinctive enough in the Czech ecosystem to be a story.</p>
+
+  <table>
+    <thead><tr><th>Outlet</th><th>Angle</th><th>Language</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Czechcrunch</strong></td><td>Founder story, scale-up energy</td><td>English</td></tr>
+      <tr><td><strong>Forbes Czechia</strong></td><td>Business success, $1.7B client valuations</td><td>Czech</td></tr>
+      <tr><td><strong>Hospodářské noviny</strong></td><td>Analytical: the Czech-American business model</td><td>Czech</td></tr>
+      <tr><td><strong>Lupa.cz</strong></td><td>Digital industry, practitioner-focused</td><td>English</td></tr>
+      <tr><td><strong>E15</strong></td><td>Business news, lighter story</td><td>Czech</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:#747570;">Send all five in one week, one follow-up after 5–7 business days, then stop. Czech podcasts (Vojta Roček, the CzechCrunch podcast, Patro) follow after the first print response or alongside the August report, with Jake as guest.</p>
+
+  <div class="callout quiet">
+    <p><strong>What to expect:</strong> let's see how cold pitches convert, but realistically we could get at least one thing out of it, especially in the middle of a dry summer. And all we need is one to start. Every reply, even "not now, but interesting," is a warm contact for the August report news.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Track two: international press</h2></div>
+  <p class="sec-sub">The bigger opportunity. Three press moments around the report launches, each one a chance for a concentrated push. (The daily relationship-building habit lives in the Earned backlinks workstream below.)</p>
+
+  <div class="moment">
+    <div class="when">August · The priority</div>
+    <div class="title">AI-Native Delivery report</div>
+    <p>July: build the list of ten journalists who cover AI and engineering at outlets like TechCrunch, The Information, Sifted, The New Stack, and InfoQ. Launch week: put out a press release through a European newswire (around 5k CZK to distribute it widely), pitch all ten directly, go back to the Czech outlets a second time now that they know us from the June founder story, and pitch one or two podcasts. If anything in this plan justifies bringing in an agency for a one-off, it's this launch, but that's an option only, never the number-one plan: by default we run it ourselves.</p>
+    <p><strong>August timing (I'm away Aug 24 – Sep 1).</strong> The launch and its follow-up window should fit comfortably before the vacation, so the report stays in August rather than moving to September. Two things to keep in mind: (1) ideally launch early-to-mid August (around the 14th) and try not to let it slip past the 22nd, since a later slip would run into my absence; (2) aim to wrap the active outreach (the ten pitches, Czech second swing, podcast pitches, first follow-up) by Aug 22. Anything that trickles in while I'm away can wait until I'm back, or an agency covers it if we use one for the launch.</p>
+  </div>
+  <div class="moment">
+    <div class="when">October</div>
+    <div class="title">Healthcare engineering report</div>
+    <p>Lighter and in-house. Shortlist of about five healthcare-tech journalists in September, direct outreach in launch week. Ideally the OpenLoop case study carries it anonymized, and that's enough. Czech press gets the healthcare angle as a third piece.</p>
+  </div>
+  <div class="moment">
+    <div class="when">Late November</div>
+    <div class="title">"What CTOs Are Building in 2027" survey</div>
+    <p>The data is the news hook, landing exactly when CTOs plan 2027 budgets. Press release on a European newswire (around 5k CZK), then five to ten journalists plus outlets like The Pragmatic Engineer and Lenny's Newsletter for the planning-season angle. The data doubles as a clean Czech-press hook, the fourth piece of content.</p>
+  </div>
+
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Directories</h2></div>
+  <p class="sec-sub">A one-time cleanup. Claim and refresh the listings where CTOs actually look, then it's done.</p>
+
+  <table>
+    <thead><tr><th>Directory</th><th>What to do</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Clutch</strong></td><td>Already listed: 5.0 rating, 30+ reviews</td><td><span class="badge b-ready">Listed</span></td></tr>
+      <tr><td><strong>GoodFirms</strong></td><td>Claim the free listing</td><td><span class="badge b-open">To check</span></td></tr>
+      <tr><td><strong>The Manifest</strong></td><td>Claim the free listing</td><td><span class="badge b-open">To check</span></td></tr>
+      <tr><td><strong>DesignRush</strong></td><td>Claim the free listing</td><td><span class="badge b-open">To check</span></td></tr>
+      <tr><td><strong>Crunchbase</strong></td><td>Refresh the profile with AI-Native positioning</td><td><span class="badge b-open">Text in prep</span></td></tr>
+      <tr><td><strong>EU-Startups</strong></td><td>Claim the directory listing</td><td><span class="badge b-open">To check</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Earned backlinks</h2></div>
+  <p class="sec-sub">Its own workstream, not a byproduct. Backlinks tend not to build up on their own, so this gets a light, recurring rhythm of its own.</p>
+  <ul>
+    <li><strong>Daily (from June or July, once signed up):</strong> about ten minutes a day on the journalist-request platforms (HARO, Qwoted, Connectively, Help a B2B Writer), answering only the requests that fit AI delivery, engineering leadership, or scaling. Every published quote is a link and a journalist who now knows us.</li>
+    <li><strong>Monthly:</strong> one proactive action. Either a contributed article on a publication that accepts them and reaches engineering leaders, the strongest fits are The New Stack, InfoQ, and DZone, with developer communities like DEV.to and Hashnode as easier, lower-effort wins, or getting OAK'S LAB added to a credible "best engineering partners" roundup.</li>
+    <li><strong>Podcasts (opportunistic):</strong> when one of Jake's posts clears 3% engagement, that topic is podcast-ready, two to three pitches a quarter. Each appearance brings a link from the host's site.</li>
+    <li><strong>Per report launch:</strong> chase citations from the press push so the coverage turns into links.</li>
+    <li><strong>Ongoing:</strong> log every earned link in a simple tracker, reviewed at the December audit against the domain-authority baseline.</li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Calendar &amp; budget</h2></div>
+  <div class="timeline">
+    <div class="t-row"><div class="t-month">June</div><div class="t-what">Preparation: journalist research, Czech versions of pitches, international list, directory checks, Crunchbase text. Sign up for the journalist-request platforms so the daily backlink habit starts now.</div><div class="t-who"><span class="badge b-barbora">Barbora</span></div></div>
+    <div class="t-row"><div class="t-month">July</div><div class="t-what">Czech pitches out · directory claims · daily backlink habit running · <strong>agency yes/no, end of month</strong></div><div class="t-who"><span class="badge b-barbora">Barbora</span></div></div>
+    <div class="t-row t-big"><div class="t-month">August</div><div class="t-what"><strong>AI report press push:</strong> wire release, ten journalist pitches, Czech second swing, podcast pitches. <strong>Launch by ~Aug 14, active outreach wrapped by Aug 22</strong> (Barbora away Aug 24 – Sep 1; agency covers the tail).</div><div class="t-who"><span class="badge b-both">Barbora + Jake</span></div></div>
+    <div class="t-row"><div class="t-month">September</div><div class="t-what">Daily engine running · healthcare journalist shortlist</div><div class="t-who"><span class="badge b-barbora">Barbora</span></div></div>
+    <div class="t-row t-big"><div class="t-month">October</div><div class="t-what"><strong>Healthcare report push:</strong> direct outreach, in-house</div><div class="t-who"><span class="badge b-barbora">Barbora</span></div></div>
+    <div class="t-row t-big"><div class="t-month">November</div><div class="t-what"><strong>Survey report push</strong> (late month): planning-season angle</div><div class="t-who"><span class="badge b-barbora">Barbora</span></div></div>
+    <div class="t-row"><div class="t-month">December</div><div class="t-what">Audit: new backlinks vs. baseline, coverage log, what to double down on or cut in 2027</div><div class="t-who"><span class="badge b-barbora">Barbora</span></div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Budget item</th><th>Cost</th></tr></thead>
+    <tbody>
+      <tr><td>Journalist-request platforms (free tiers), Crunchbase</td><td>0</td></tr>
+      <tr><td>Press releases on a newswire, 2 over H2 (R1 in August, R3 in November)</td><td>~7–10k CZK</td></tr>
+      <tr><td>Optional agency one-off for the August report</td><td>30–80k CZK reserve</td></tr>
+      <tr><td><strong>Total H2, base case</strong></td><td><strong>~7–10k CZK</strong></td></tr>
+      <tr><td><strong>Total H2, with the agency push</strong></td><td><strong>~40–90k CZK</strong></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13.5px; color:#747570;"><strong>On the newswire:</strong> recommended pick is EIN Presswire (~$149 a release, so both come to ~7k CZK, under budget). It's the right tier for a B2B tech firm: broad aggregator pickup plus keyword backlinks that feed the earned-backlinks workstream. Worth knowing its links are no-follow, so it drives visibility and a web of industry links rather than hard domain-authority gains, the high-authority links still come from real earned coverage. Premium wires (PR Newswire, Business Wire) run $1,000–3,000+ and are overkill for amplification.</p>
+
+</div>
+
+<div class="section">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Ideal outcomes</h2></div>
+  <p class="sec-sub">What good looks like by December. The year-end audit measures the plan against these and decides what gets doubled down on or cut for 2027.</p>
+  <ul>
+    <li><strong>Coverage:</strong> at least one Czech outlet has run the founder story, and the August report earned international pickup or citations.</li>
+    <li><strong>Relationships:</strong> a working list of journalists who know OAK'S LAB and have replied at least once. That's the asset that makes 2027 pitching warm instead of cold.</li>
+    <li><strong>Authority:</strong> measurable backlink growth against the domain-authority baseline, all earned: report citations, podcast appearances, published quotes.</li>
+    <li><strong>Presence:</strong> all six directories claimed and current, so every "best engineering partner" search path finds an up-to-date profile.</li>
+    <li><strong>A repeatable playbook:</strong> we'll know which track produced results per crown spent, and 2027 starts with a tested system instead of a hypothesis.</li>
+  </ul>
+
+  <p style="margin-top:24px;">Rough targets, set deliberately as floors we'd be happy to clear (PR is lumpy, so one strong hit can be worth more than volume):</p>
+  <table>
+    <thead><tr><th>Outcome</th><th>Floor by December</th></tr></thead>
+    <tbody>
+      <tr><td>Coverage</td><td>At least one piece of earned coverage, most likely Czech. Any report pickups on top are a bonus.</td></tr>
+      <tr><td>Relationships</td><td>15+ journalists contacted, a handful who've replied at least once.</td></tr>
+      <tr><td>Authority</td><td>Some measurable backlink growth vs. the baseline, plus a few published quotes once the daily habit is running.</td></tr>
+      <tr><td>Presence</td><td>6 of 6 directories claimed and current.</td></tr>
+      <tr><td>Playbook</td><td>One tested system: we know which track delivered per crown spent.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+</div>
+</body>
+</html>
